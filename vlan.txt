@@ -1,0 +1,33 @@
+vlan 10
+name test10
+exit
+vlan 11
+name test11
+exit
+vlan 12
+name test12
+exit
+interface vlan 10
+description config con Nornir
+ip add 192.168.10.1/24
+exit
+interface vlan 11
+description config con Nornir
+ip add 192.168.11.1/24
+exit
+interface vlan 12
+description config con Nornir
+ip add 192.168.12.1/24
+exit
+interface ethernet 1/10
+sw mode access
+sw access vlan 10
+exit
+interface ethernet 1/11
+sw mode access
+sw access vlan 11
+exit
+interface ethernet 1/12
+sw mode access
+sw access vlan 12
+exit
